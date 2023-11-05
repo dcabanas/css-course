@@ -1,3 +1,29 @@
-section {
+/*section {
     background: #ff1b68;
+}*/
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*
+    ID's, Classes and Descendant Combinators are the most common use cases
+ */
+#product-overview {
+    background: #ff1b68;
+}
+
+/*
+    Any h1 tag that is nested inside an element with id product-overview
+    It works for multiple leves of nestiness
+ */
+#product-overview h1 { /* this could also be achieved with -> font-family: inherit; */
+    color: white;
+    font-family: 'Anton', sans-serif;
+}
+
+/*
+    When we want to reuse a style, the class selector is the way to go
+ */
+.section-title {
+    color: #2ddf5c;
 }
