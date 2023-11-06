@@ -1,0 +1,37 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    /* the browser sets a default box-sizing therefore our own is overriden */
+    box-sizing: border-box;
+    /* the prefered way instead of content-box.
+       the width and height are only for the content, if we use border-box the width will be content width (our value) + left and right (padding + margin)
+       if we use content-box, width and heigth will be (in total) everything above + (border top and bottom)
+    */
+}
+
+#product-overview {
+    background: #ff1b68;
+    /*
+        block level elements (<a/> <img/> etc excluded) always the full width of the page by default
+        the width is directly related to the width of the container (parent) element's width
+    */
+    width: 100%;
+    height: 528px; /* same thing with the width */
+    padding: 20px;
+    border: 5px black solid; /* !* shorthand for border-style: solid; border-color: black; border-width: 5px *! */
+    margin: 10px;
+
+}
+
+.section-title {
+    color: #2ddf5c;
+}
+
+#product-overview h1 {
+    color: white;
+    font-family: 'Anton', sans-serif;
+}
+
+/* h1 {
+    font-family: sans-serif;
+} */
