@@ -11,7 +11,8 @@ body {
 }
 
 #product-overview {
-    background: #ff1b68;
+    /*background: #ff1b68;*/
+    background: url("freedom.jpg");
     /*
         Block level elements (elements that if we repeat them in a html file will be displayed in the next line)
         always take the full width of the page by default. Some examples are: <div> , <section> , <article> , <nav>  but also <h1> , <h2>  etc and <p> .
@@ -49,12 +50,21 @@ body {
 
 .main-header > div {
     display: inline-block;
+    vertical-align: middle; /* should be used on all elements we want to align */
+}
+
+.main-header__brand {
+    color: #0e4f1f;
+    text-decoration: none; /* removes underline */
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .main-nav {
     display: inline-block;
     text-align: right;
-    width: calc(100% - 54px);
+    width: calc(100% - 75px);
+    vertical-align: middle;
 }
 
 /*
@@ -74,4 +84,52 @@ body {
 
 .main-nav__item {
     display: inline-block;
+    margin: 0 16px
+}
+
+.main-nav__item a {
+    color: #0e4f1f;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 3px 0;
+}
+
+/*
+    Pseudo element (::)
+ */
+/*.main-nav__item a::after {
+    content: " (Link)";
+    color: red;
+}*/
+
+/*
+    Pseudo classes (:)
+ */
+.main-nav__item a:hover,
+.main-nav__item a:active { /* instead of repeating the style, we group selectors with same style */
+    color: white;
+    border-bottom: 5px solid white;
+}
+/*.main-nav__item a:active {
+    color: white;
+}*/
+
+.main-nav__item--cta a {
+    color: white;
+    background: #ff1b68;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.main-nav__item--cta a:hover,
+.main-nav__item--cta a:active {
+    color: #ff1b68;
+    background: white;
+    border: none;
+}
+
+
+p::first-letter {
+    color: red;
+    font-size: 50px;
 }
