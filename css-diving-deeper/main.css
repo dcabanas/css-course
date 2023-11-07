@@ -4,7 +4,8 @@ body {
     /* the browser sets a default box-sizing therefore our own is overriden */
     box-sizing: border-box;
     /* the prefered way instead of content-box.
-       the width and height are only for the content, if we use border-box the width will be content width (our value) + left and right (padding + margin)
+       the width and height are only for the content.
+       if we use border-box the width will be content width (our value) + left and right (padding + margin)
        if we use content-box, width and heigth will be (in total) everything above + (border top and bottom)
     */
 }
@@ -12,15 +13,19 @@ body {
 #product-overview {
     background: #ff1b68;
     /*
-        block level elements (<a/> <img/> etc excluded) always the full width of the page by default
+        Block level elements (elements that if we repeat them in a html file will be displayed in the next line)
+        always take the full width of the page by default. Some examples are: <div> , <section> , <article> , <nav>  but also <h1> , <h2>  etc and <p> .
+        Inline elements on the other hand only take up the space they require to fit their content in. Hence two
+        inline-elements will fit into the same line (as long as the combined content doesn't take up theentire space
+        in which case a line break would be added). Some example elements are: <a> , <span> , <img>
+
         the width is directly related to the width of the container (parent) element's width
     */
     width: 100%;
     height: 528px; /* same thing with the width */
     padding: 20px;
-    border: 5px black solid; /* !* shorthand for border-style: solid; border-color: black; border-width: 5px *! */
-    margin: 10px;
-
+    /*border: 5px black solid; !* !* shorthand for border-style: solid; border-color: black; border-width: 5px *! *!
+    margin: 10px;*/
 }
 
 .section-title {
@@ -35,3 +40,38 @@ body {
 /* h1 {
     font-family: sans-serif;
 } */
+
+.main-header {
+    width: 100%;
+    background-color: #2ddf5c;
+    padding: 8px 16px
+}
+
+.main-header > div {
+    display: inline-block;
+}
+
+.main-nav {
+    display: inline-block;
+    text-align: right;
+    width: calc(100% - 54px);
+}
+
+/*
+    the display property allows us to change the behaviour of an element
+    (if they are displayed inline or jump to the next line - block and will take the full width of the page)
+
+    display: none removes the element to which you apply it from the document flow. This means that the element is not
+    visible and it also doesn't "block its position". Other elements can (and will) take its place instead.
+    with visibility: hidden we simply just hide the element and others won't come and this its place
+*/
+
+.main-nav__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-nav__item {
+    display: inline-block;
+}
