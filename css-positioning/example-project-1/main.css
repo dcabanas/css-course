@@ -1,0 +1,45 @@
+html {
+    background: #b3b3b3;
+    padding: 15px;
+    border: 5px solid white;
+    margin: 15px;
+    height: 2000px;
+}
+
+body {
+    background: #fa923f;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 0;
+  }
+  
+.parent {
+    background: white;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 0;
+  }
+  
+.parent div {
+    background: rgb(105, 105, 109);
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+}
+
+.parent .child-1 {
+    position: fixed;
+    width: 100%;
+    /*
+        top, bot, right, left only work when position != 'static' the default
+        and by default, position: fixed is always relative to the viewport
+        position can be applued either to block level or inline elements
+
+        when position is relative, these 4 properties refer to the element itself
+     */
+    top: 0;
+    left: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
