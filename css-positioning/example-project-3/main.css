@@ -8,7 +8,7 @@ html {
 
 /*
     Stacking context: it's related to the children of an element
-    z-index affects the siblings
+    z-index affects the siblings. For flexbox, z-index doesnt need the position property to be set
  */
 
 body {

@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+    font-size: 1.5rem;
+}
+
+html {
+    background: #b3b3b3;
+    padding: 5px;
+}
+
+body {
+    background: #b3b3b3;
+    padding: 5px;
+    margin: 0;
+  }
+  
+.flex-container {
+    background: white;
+    padding: 10px;
+    border: 5px solid black;
+    /*
+        by applying flex the element becomes a flex container (parent)
+        and it's children become block elements. With inline-flex they become inline elements
+
+        we also gain automatically two properties applied to the children:
+        flex-direction: row; flex-wrap: nowrap
+     */
+    display: flex;
+    flex-direction: row;
+    /*
+        wrap accomodates the children inside the parent. If width not enough they jump to the next line (row)
+        wrap-reverse same thing but changes the order of the children
+
+        flex-flow: row wrap; shorthand from direction and wrap
+     */
+    flex-wrap: wrap;
+    /*
+        align-items aligns the children relative to the cross axis, according to it's different values
+        justify-content aligns the children relative to the main axis, according to it's different values
+        align-content property sets the distribution of space between and around the children along the cross-axis
+     */
+  }
+
+.item-1 {
+    background: #ff7300;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+}
+
+.item-2 {
+    background: #ff9640;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 250px;
+    font-size: 1.8rem;
+}
+
+.item-3 {
+    background: #ff9640;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    height: 250px;
+}
+
+.item-4 {
+    background: #f5c096;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+}
+
+.item-5 {
+    background: #d3c0b1;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 350px;
+}
+
+.item-6 {
+    background: #d3c0b1;
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    width: 350px;
+}
