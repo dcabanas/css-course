@@ -33,10 +33,7 @@ body {
 
         flex-flow: row wrap; shorthand from direction and wrap
      */
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-start;
-    align-content: center;
+    flex-wrap: wrap;
     /*
         align-items aligns the children relative to the cross axis, according to it's different values
         justify-content aligns the children relative to the main axis, according to it's different values
@@ -69,10 +66,6 @@ body {
     border: 5px solid black;
     margin: 10px;
     height: 250px;
-    align-self: flex-start;
-    /*
-        align-self aligns a single flex-child according to the cross-axis
-     */
 }
 
 .item-4 {
@@ -83,11 +76,6 @@ body {
     margin: 10px;
     width: 300px;
     height: 300px;
-    /*order: -1;*/
-    /*
-        order default value is 0 and works in a similar to the z-index (always depends on the other elements order value)
-        order, affects the order of a flex-child element according to the flex-direction (row or column)
-     */
 }
 
 .item-5 {
@@ -97,19 +85,6 @@ body {
     border: 5px solid black;
     margin: 10px;
     width: 350px;
-    /*flex-grow: 1;*/
-    /*
-        flex-grow allows us to distribute the available space (according to flex-direction)
-        to the flex-children with flex-grow property
-        the default value is 0, and the children's width will be calculated in the following manner:
-        their flex-grow value / sum(flex-grow value of all flex-children)
-
-        this is only valid for flex-children that are on the same axis
-     */
-    flex-shrink: 1;
-    /*
-        default value is 1, and it does not allow a flex-child to shrink more than it's original width
-     */
 }
 
 .item-6 {
@@ -119,6 +94,4 @@ body {
     border: 5px solid black;
     margin: 10px;
     width: 350px;
-    /*flex-grow: 4;*/
-    flex-shrink: 1;
 }
