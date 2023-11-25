@@ -1,5 +1,17 @@
 .container {
     margin: 20px;
+    display: grid;
+    /*
+        by using grid the default behaviour is creating only one column and as many rows
+        as the number of the child elements the parent (grid) element has
+     */
+    grid-template-columns: 200px 2fr 20% 1fr;
+    /*
+        grid-template-columns allows us to override the number of columns we want
+        each value indicates the widt of each column, and fr (fraction) means that the reamining
+        space available will be distributed according the fraction of each collumn with fr specified
+     */
+    grid-template-rows: 5rem 2.5rem;
 }
 
 .el1 {
@@ -12,6 +24,14 @@
 
 .el3 {
     background: rgba(0, 128, 0, 0.5);
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    /*
+        these properties allows us to define how to position the child in the grid
+        in this example the third child will occupy the last two columns and first and second row
+     */
 }
 
 .el4 {
