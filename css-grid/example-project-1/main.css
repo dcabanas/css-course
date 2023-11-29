@@ -12,7 +12,7 @@
         each value indicates the widt of each column, and fr (fraction) means that the reamining
         space available will be distributed according the fraction of each collumn with fr specified
      */
-    grid-template-rows: 5rem 2.5rem;
+    grid-template-rows: 5rem 2.5rem 100px;
     /*
         the last argument (of the above) can also be auto to occupy the remaining available space
      */
@@ -24,12 +24,35 @@
     grid-row-gap: 10px;
     /* grid-gap: 10px 20px; shorthand for the two above */
     grid-template-areas: "header header header header"
-                         ". . main main";
+                         ". side main main";
                          "footer footer footer footer";
+    /**
+        positions the elements according to their grid rows
+        stretch is the default value
+        (same for align-items -> columns)
+     */
+    justify-items: stretch;
+    align-items: stretch;
+    /**
+        justify-content and align-content position the entire grid content
+        along the x-axis and y-axis respectively
+     */
+    /*justify-content: center;*/
+}
+
+@media (max-width: 40rem) {
+    .container {
+        grid-template-rows: 5rem 2.5rem 150px 100px;
+        grid-template-areas: "header header header header"
+                             "main main main main";
+                             "side side side side"
+                             "footer footer footer footer";
+    }
 }
 
 .el1 {
     background: rgba(255, 154, 72, 0.5);
+    grid-area: side;
 }
 
 .el2 {
@@ -45,6 +68,8 @@
         child can overlap on the grid
      */
     grid-area: main;
+    /*justify-self: center;
+    align-self: center;*/
 }
 
 .el3 {
@@ -63,4 +88,5 @@
 
 .el4 {
     background: rgba(0, 4, 255, 0.5);
+    grid-area: footer;
 }

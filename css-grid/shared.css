@@ -6,14 +6,32 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
+  /*
+    elements with position: fixer or absolute; are not part of the document flow
+    and therefore not considered in the grid
+   */
+  display: grid;
+  grid-template-rows: 3.5rem auto fit-content(8rem);
+  height: 100%;
+  /**
+    with grid-template-areas we replace the grid-rows's and grid-columns in our child elements
+    by the names we are targeting here in this string template
+   */
+  grid-template-areas: "header"
+                       "main"
+                       "footer";
 }
 
 main {
-  min-height: calc(100vh - 3.5rem - 8rem);
-  margin-top: 3.5rem;
+  /*grid-row: 2 / 3;*/
+  grid-area: main;
 }
 
 .backdrop {
@@ -135,6 +153,8 @@ main {
   background: black;
   padding: 2rem;
   margin-top: 3rem;
+  /*grid-row: 3 / 4;*/
+  grid-area: footer;
 }
 
 .main-footer__links {

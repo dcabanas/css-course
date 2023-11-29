@@ -1,0 +1,42 @@
+.container {
+    margin: 20px;
+    display: grid;
+    /*
+        with grid-template-columns and grid-template-rows we
+        define the explicit grid
+
+        with grid-auto-rows,grid-auto-column and grid-auto-flow
+        we define the implicit grid
+
+        the grid system automatically manages the implicit grid
+     */
+    grid-template-columns: repeat(auto-fill, 15rem); /* auto-fill helps to fill the rows with child elements / auto-fit same behaviour but centers */
+    justify-content: center;
+    grid-gap: 1.5rem;
+    /*
+        grid by default creates direct child elements in new rows
+        we can customize the size of these rows
+     */
+    grid-auto-rows: minmax(8rem, auto);
+    /*
+        changes the default grid behaviour and appends new childs in a new column
+        when this is active we can customize each column width
+        with grid-auto-column
+     */
+    /*grid-auto-flow: column;*/
+    grid-auto-flow: row;
+}
+
+.quote {
+  border: 1px solid #fa923f;
+  background: #ffbd87;
+  font-family: sans-serif;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.quote--featured {
+  border: #ff4213;
+  background: #ff9f87;
+  grid-column: span 2;
+}
